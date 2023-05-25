@@ -1,23 +1,25 @@
 const PropertiesReader = require('properties-reader');
-const properties = PropertiesReader('./property.properties');
+// const properties = PropertiesReader('./property.properties');
 const nodemailer = require('nodemailer')
 
 function emailSend() {
 
     //#1. Transporter 객체 생성
     let transporter = nodemailer.createTransport({
-        host: 'smtp.naver.com',
-        secure: true,  //다른 포트를 사용해야 되면 false값을 주어야 합니다.
-        port: 465, //587, 465  //다른 포트를 사용시 여기에 해당 값을 주어야 합니다.
+        host: 'smtp.office365.com',
+        secure: false,  //다른 포트를 사용해야 되면 false값을 주어야 합니다.
+        port: 587, //587, 465  //다른 포트를 사용시 여기에 해당 값을 주어야 합니다.
         auth: {
-            user: properties.get('EMAIL_USERADDRESS'),
-            pass: properties.get('EMAIL_PASSWORD')
+            user: 'jjs81555@gmail.com',
+            pass: 'aktkszldzhd815'
+            // user: properties.get('EMAIL_USERADDRESS'),
+            // pass: properties.get('EMAIL_PASSWORD')
         }
     });
 
     //#2. 이메일 내용작성
     let message = { 
-        from: 'jjs815@naver.com', // from 작성시 보내는 사람의 이메일 전부 작성
+        from: 'jjs81555@gmail.com', // from 작성시 보내는 사람의 이메일 전부 작성
         to: 'jjs81555@gmail.com', //'받는사람1@주소.com, 받는사람2@주소.com',
         // cc: '참조1@주소.com, 참조2@주소.com',
         // bcc : '숨은참조1@주소.com, 숨은참조2@주소.com',
