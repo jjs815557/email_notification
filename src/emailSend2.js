@@ -7,8 +7,8 @@ async function sendMail() {
     port: 587,
     secure: false,
     auth: {
-      user: 'jjs81555@gmail.com', // 발신자 이메일 주소
-      pass: 'aktkszldzhd815' // 발신자 이메일 비밀번호 또는 액세스 토큰
+      user: '**********', // 발신자 이메일 주소
+      pass: '**********' // 발신자 이메일 비밀번호 또는 액세스 토큰
     }
   });
 
@@ -16,7 +16,7 @@ async function sendMail() {
     // 이메일 옵션 설정
     let info = await transporter.sendMail({
       from: 'jjs81555@gmail.com', // 발신자 이메일 주소
-      to: 'jjs81555@gmail.com', // 수신자 이메일 주소
+      to: 'jjs815@naver.com', // 수신자 이메일 주소
       subject: '테스트 이메일', // 이메일 제목
       text: '안녕하세요, 이메일 본문입니다.' // 이메일 본문 (텍스트 형식)
       // html: '<b>안녕하세요, 이메일 본문입니다.</b>' // 이메일 본문 (HTML 형식)
